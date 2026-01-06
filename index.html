@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Smart Campus Issue Reporter</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Add FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- For responsiveness -->
+</head>
+<body>
+
+  <!-- New Header with Dark Mode Toggle -->
+  <header>
+    <h1><i class="fas fa-university"></i> Smart Campus Issue Reporter</h1>
+    <button id="theme-toggle"><i class="fas fa-moon"></i> Dark Mode</button>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Report Issues & Keep Campus Awesome!</h2>
+    <p>Login below to submit or view reports. Let's make our campus better together.</p>
+  </section>
+
+  <!-- Login Section -->
+  <div class="auth-section">
+    <button id="loginBtn"><i class="fab fa-google"></i> Login with Google</button>
+    <button id="logoutBtn" style="display:none;"><i class="fas fa-sign-out-alt"></i> Logout</button>
+  </div>
+
+  <!-- Main App (Hidden until login) -->
+  <div id="app" style="display:none; margin-top:20px;">
+
+    <!-- Report Form in a Card -->
+    <div class="form-card">
+      <h3><i class="fas fa-exclamation-triangle"></i> Report an Issue</h3>
+      <input type="text" id="issueTitle" placeholder="Issue title" required><br><br>
+      <select id="issueCategory" required>
+        <option value="">Select Category</option>
+        <option>Electricity</option>
+        <option>Cleanliness</option>
+        <option>Internet</option>
+        <option>Classroom</option>
+        <option>Other</option>
+      </select><br><br>
+      <textarea id="issueDesc" placeholder="Describe the issue" required></textarea><br><br>
+      <button id="submitBtn"><i class="fas fa-paper-plane"></i> Submit Issue</button>
+    </div>
+
+    <!-- Issues List in a Card -->
+    <div class="list-card">
+      <h3 style="margin-top:20px;"><i class="fas fa-list"></i> Reported Issues</h3>
+      <ul id="issueList"></ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 | Powered by Firebase <i class="fas fa-fire"></i></p>
+  </footer>
+
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
